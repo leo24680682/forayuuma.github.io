@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Background music -->
+    <audio autoplay loop>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <h1>May Thu Htet@A yuu ma</h1>
+        <p>Girlfriend lot ma lr(or)Wife lot ma lr</p>
+        <p>There's only one thing left to ask:(br ny ny "Yes" bl lo chin tl hrr)</p>
+
+        <!-- Displaying photos of her -->
+        <div class="photos">
+            <img src="photo1.jpg" alt="Photo 1">
+            <img src="photo2.jpg" alt="Photo 2">
+        </div>
+
+        <!-- Yes and No buttons -->
+        <button class="yes-btn" onclick="showMessage()">Yes</button>
+        <button class="no-btn" onmouseover="moveButton()">No</button>
+
+        <div id="message" class="hidden">
+            <p>You just made my heart so happy! 💖</p>
+        </div>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('message').classList.remove('hidden');
+        }
+
+        function moveButton() {
+            const button = document.querySelector('.no-btn');
+            const x = Math.floor(Math.random() * window.innerWidth - button.clientWidth);
+            const y = Math.floor(Math.random() * window.innerHeight - button.clientHeight);
+            button.style.position = 'absolute';
+            button.style.left = x + 'px';
+            button.style.top = y + 'px';
+        }
+    </script>
+</body>
+</html>
